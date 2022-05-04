@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.10.4 on win32)" generated="20220504 20:45:01.265" rpa="false" schemaversion="2">
+<suite id="s1" name="TestCases" source="D:\pranay\GlobalLogicTask\Tests\TestCases.robot">
+<test id="s1-t1" name="Validate Valid Boundary Value">
+<kw name="Check Boundary Values">
+<var>${Output}</var>
+<arg>${ValidValue}</arg>
+<doc>This Keyword will validate the given value with the Function under test</doc>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${KeywordOutput}</arg>
+<arg>${EMPTY}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220504 20:45:01.297" level="INFO">${KeywordOutput} = </msg>
+<status status="PASS" starttime="20220504 20:45:01.297" endtime="20220504 20:45:01.297"/>
+</kw>
+<kw name="Check Datatype">
+<var>${IsInt}</var>
+<arg>${BoundaryNum}</arg>
+<doc>This Keyword will check the data type of a variable</doc>
+<kw name="Evaluate" library="BuiltIn">
+<var>${is int}</var>
+<arg>type(${BoundaryNum}).__name__</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220504 20:45:01.312" level="INFO">${is int} = int</msg>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<msg timestamp="20220504 20:45:01.312" level="INFO">${IsInt} = int</msg>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<if>
+<branch type="IF" condition="'${IsInt}' == 'int'">
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${BoundaryNum}</var>
+<arg>${BoundaryNum}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20220504 20:45:01.312" level="INFO">${BoundaryNum} = 25</msg>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<if>
+<branch type="IF" condition="${BoundaryNum}&gt;100 or ${BoundaryNum}&lt;-100 or ${BoundaryNum}==13">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Status}</var>
+<arg>run keyword and expect error</arg>
+<arg>System error</arg>
+<arg>output</arg>
+<arg>${BoundaryNum}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<if>
+<branch type="IF" condition="${Status}">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${KeywordOutput}</arg>
+<arg>System Error</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<status status="NOT RUN" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</branch>
+<status status="NOT RUN" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</if>
+<status status="NOT RUN" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</branch>
+<branch type="ELSE">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Status}</var>
+<arg>output</arg>
+<arg>${BoundaryNum}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Output" library="Function">
+<arg>${BoundaryNum}</arg>
+<msg timestamp="20220504 20:45:01.312" level="INFO">0.4</msg>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<msg timestamp="20220504 20:45:01.312" level="INFO">${Status} = True</msg>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<if>
+<branch type="IF" condition="${Status}">
+<kw name="Output" library="Function">
+<arg>${BoundaryNum}</arg>
+<msg timestamp="20220504 20:45:01.312" level="INFO">0.4</msg>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${KeywordOutput}</arg>
+<arg>System Error</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<status status="NOT RUN" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</branch>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</if>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</branch>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</if>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Enter Integer Values</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<status status="NOT RUN" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</branch>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</if>
+<msg timestamp="20220504 20:45:01.312" level="INFO">${Output} = </msg>
+<status status="PASS" starttime="20220504 20:45:01.297" endtime="20220504 20:45:01.312"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${ValidValue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<doc>This Test case will check the Output function weather it is allowing valid values to
+pass without system error</doc>
+<status status="PASS" starttime="20220504 20:45:01.297" endtime="20220504 20:45:01.312"/>
+</test>
+<test id="s1-t2" name="Validate Invalid Boundary Value">
+<kw name="Check Boundary Values">
+<var>${Output}</var>
+<arg>${InvalidValue}</arg>
+<doc>This Keyword will validate the given value with the Function under test</doc>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${KeywordOutput}</arg>
+<arg>${EMPTY}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220504 20:45:01.312" level="INFO">${KeywordOutput} = </msg>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<kw name="Check Datatype">
+<var>${IsInt}</var>
+<arg>${BoundaryNum}</arg>
+<doc>This Keyword will check the data type of a variable</doc>
+<kw name="Evaluate" library="BuiltIn">
+<var>${is int}</var>
+<arg>type(${BoundaryNum}).__name__</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220504 20:45:01.312" level="INFO">${is int} = int</msg>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<msg timestamp="20220504 20:45:01.312" level="INFO">${IsInt} = int</msg>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<if>
+<branch type="IF" condition="'${IsInt}' == 'int'">
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${BoundaryNum}</var>
+<arg>${BoundaryNum}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20220504 20:45:01.312" level="INFO">${BoundaryNum} = -101</msg>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<if>
+<branch type="IF" condition="${BoundaryNum}&gt;100 or ${BoundaryNum}&lt;-100 or ${BoundaryNum}==13">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Status}</var>
+<arg>run keyword and expect error</arg>
+<arg>System error</arg>
+<arg>output</arg>
+<arg>${BoundaryNum}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<arg>System error</arg>
+<arg>output</arg>
+<arg>${BoundaryNum}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<kw name="Output" library="Function">
+<arg>${BoundaryNum}</arg>
+<msg timestamp="20220504 20:45:01.312" level="FAIL">System error</msg>
+<status status="FAIL" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<msg timestamp="20220504 20:45:01.312" level="INFO">${Status} = True</msg>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<if>
+<branch type="IF" condition="${Status}">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${KeywordOutput}</arg>
+<arg>System Error</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220504 20:45:01.312" level="INFO">${KeywordOutput} = System Error</msg>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</branch>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</if>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</branch>
+<branch type="ELSE">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Status}</var>
+<arg>output</arg>
+<arg>${BoundaryNum}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<if>
+<branch type="IF" condition="${Status}">
+<kw name="Output" library="Function">
+<arg>${BoundaryNum}</arg>
+<status status="NOT RUN" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<status status="NOT RUN" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${KeywordOutput}</arg>
+<arg>System Error</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<status status="NOT RUN" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</branch>
+<status status="NOT RUN" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</if>
+<status status="NOT RUN" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</branch>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</if>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Enter Integer Values</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<status status="NOT RUN" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</branch>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</if>
+<msg timestamp="20220504 20:45:01.312" level="INFO">${Output} = System Error</msg>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${InvalidValue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</kw>
+<doc>This Test case will check the Output function weather it is Avoiding Invalid values
+and throwing System Error as expected</doc>
+<status status="PASS" starttime="20220504 20:45:01.312" endtime="20220504 20:45:01.312"/>
+</test>
+<test id="s1-t3" name="Validate Exact Boundary Value">
+<kw name="Check Boundary Values">
+<var>${Output}</var>
+<arg>${ExactBoundaryValue}</arg>
+<doc>This Keyword will validate the given value with the Function under test</doc>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${KeywordOutput}</arg>
+<arg>${EMPTY}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220504 20:45:01.328" level="INFO">${KeywordOutput} = </msg>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</kw>
+<kw name="Check Datatype">
+<var>${IsInt}</var>
+<arg>${BoundaryNum}</arg>
+<doc>This Keyword will check the data type of a variable</doc>
+<kw name="Evaluate" library="BuiltIn">
+<var>${is int}</var>
+<arg>type(${BoundaryNum}).__name__</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220504 20:45:01.328" level="INFO">${is int} = int</msg>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</kw>
+<msg timestamp="20220504 20:45:01.328" level="INFO">${IsInt} = int</msg>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</kw>
+<if>
+<branch type="IF" condition="'${IsInt}' == 'int'">
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${BoundaryNum}</var>
+<arg>${BoundaryNum}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20220504 20:45:01.328" level="INFO">${BoundaryNum} = 13</msg>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</kw>
+<if>
+<branch type="IF" condition="${BoundaryNum}&gt;100 or ${BoundaryNum}&lt;-100 or ${BoundaryNum}==13">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Status}</var>
+<arg>run keyword and expect error</arg>
+<arg>System error</arg>
+<arg>output</arg>
+<arg>${BoundaryNum}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<arg>System error</arg>
+<arg>output</arg>
+<arg>${BoundaryNum}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<kw name="Output" library="Function">
+<arg>${BoundaryNum}</arg>
+<msg timestamp="20220504 20:45:01.328" level="FAIL">System error</msg>
+<status status="FAIL" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</kw>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</kw>
+<msg timestamp="20220504 20:45:01.328" level="INFO">${Status} = True</msg>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</kw>
+<if>
+<branch type="IF" condition="${Status}">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${KeywordOutput}</arg>
+<arg>System Error</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220504 20:45:01.328" level="INFO">${KeywordOutput} = System Error</msg>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</kw>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</branch>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</if>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</branch>
+<branch type="ELSE">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Status}</var>
+<arg>output</arg>
+<arg>${BoundaryNum}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</kw>
+<if>
+<branch type="IF" condition="${Status}">
+<kw name="Output" library="Function">
+<arg>${BoundaryNum}</arg>
+<status status="NOT RUN" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</kw>
+<status status="NOT RUN" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${KeywordOutput}</arg>
+<arg>System Error</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</kw>
+<status status="NOT RUN" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</branch>
+<status status="NOT RUN" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</if>
+<status status="NOT RUN" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</branch>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</if>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Enter Integer Values</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</kw>
+<status status="NOT RUN" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</branch>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</if>
+<msg timestamp="20220504 20:45:01.328" level="INFO">${Output} = System Error</msg>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${ExactBoundaryValue}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</kw>
+<doc>This Test case will check the Output function weather it is Avoiding Exact Invalid values
+and thoughing System Error as expected</doc>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</test>
+<test id="s1-t4" name="Validate Special Character">
+<kw name="Check Boundary Values">
+<var>${Output}</var>
+<arg>${SpecialCharacter}</arg>
+<doc>This Keyword will validate the given value with the Function under test</doc>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${KeywordOutput}</arg>
+<arg>${EMPTY}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220504 20:45:01.328" level="INFO">${KeywordOutput} = </msg>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</kw>
+<kw name="Check Datatype">
+<var>${IsInt}</var>
+<arg>${BoundaryNum}</arg>
+<doc>This Keyword will check the data type of a variable</doc>
+<kw name="Evaluate" library="BuiltIn">
+<var>${is int}</var>
+<arg>type(${BoundaryNum}).__name__</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220504 20:45:01.328" level="INFO">${is int} = str</msg>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</kw>
+<msg timestamp="20220504 20:45:01.328" level="INFO">${IsInt} = str</msg>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</kw>
+<if>
+<branch type="IF" condition="'${IsInt}' == 'int'">
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${BoundaryNum}</var>
+<arg>${BoundaryNum}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="NOT RUN" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</kw>
+<if>
+<branch type="IF" condition="${BoundaryNum}&gt;100 or ${BoundaryNum}&lt;-100 or ${BoundaryNum}==13">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Status}</var>
+<arg>run keyword and expect error</arg>
+<arg>System error</arg>
+<arg>output</arg>
+<arg>${BoundaryNum}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</kw>
+<if>
+<branch type="IF" condition="${Status}">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${KeywordOutput}</arg>
+<arg>System Error</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</kw>
+<status status="NOT RUN" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</branch>
+<status status="NOT RUN" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</if>
+<status status="NOT RUN" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.328"/>
+</branch>
+<branch type="ELSE">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Status}</var>
+<arg>output</arg>
+<arg>${BoundaryNum}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.344"/>
+</kw>
+<if>
+<branch type="IF" condition="${Status}">
+<kw name="Output" library="Function">
+<arg>${BoundaryNum}</arg>
+<status status="NOT RUN" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</kw>
+<status status="NOT RUN" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${KeywordOutput}</arg>
+<arg>System Error</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</kw>
+<status status="NOT RUN" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</branch>
+<status status="NOT RUN" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</if>
+<status status="NOT RUN" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.344"/>
+</branch>
+<status status="NOT RUN" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.344"/>
+</if>
+<status status="NOT RUN" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.344"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Enter Integer Values</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</kw>
+<status status="PASS" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</branch>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.344"/>
+</if>
+<msg timestamp="20220504 20:45:01.344" level="INFO">${Output} = </msg>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.344"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${SpecialCharacter}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</kw>
+<doc>This Test case will check the Criteria to be passed to the Output Function and will Output
+the message accordingly if it is not eligible to get into the funtion</doc>
+<status status="PASS" starttime="20220504 20:45:01.328" endtime="20220504 20:45:01.344"/>
+</test>
+<test id="s1-t5" name="Validate String">
+<kw name="Check Boundary Values">
+<var>${Output}</var>
+<arg>${String}</arg>
+<doc>This Keyword will validate the given value with the Function under test</doc>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${KeywordOutput}</arg>
+<arg>${EMPTY}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220504 20:45:01.344" level="INFO">${KeywordOutput} = </msg>
+<status status="PASS" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</kw>
+<kw name="Check Datatype">
+<var>${IsInt}</var>
+<arg>${BoundaryNum}</arg>
+<doc>This Keyword will check the data type of a variable</doc>
+<kw name="Evaluate" library="BuiltIn">
+<var>${is int}</var>
+<arg>type(${BoundaryNum}).__name__</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220504 20:45:01.344" level="INFO">${is int} = str</msg>
+<status status="PASS" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</kw>
+<msg timestamp="20220504 20:45:01.344" level="INFO">${IsInt} = str</msg>
+<status status="PASS" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</kw>
+<if>
+<branch type="IF" condition="'${IsInt}' == 'int'">
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${BoundaryNum}</var>
+<arg>${BoundaryNum}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="NOT RUN" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</kw>
+<if>
+<branch type="IF" condition="${BoundaryNum}&gt;100 or ${BoundaryNum}&lt;-100 or ${BoundaryNum}==13">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Status}</var>
+<arg>run keyword and expect error</arg>
+<arg>System error</arg>
+<arg>output</arg>
+<arg>${BoundaryNum}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</kw>
+<if>
+<branch type="IF" condition="${Status}">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${KeywordOutput}</arg>
+<arg>System Error</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</kw>
+<status status="NOT RUN" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</branch>
+<status status="NOT RUN" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</if>
+<status status="NOT RUN" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</branch>
+<branch type="ELSE">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Status}</var>
+<arg>output</arg>
+<arg>${BoundaryNum}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</kw>
+<if>
+<branch type="IF" condition="${Status}">
+<kw name="Output" library="Function">
+<arg>${BoundaryNum}</arg>
+<status status="NOT RUN" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</kw>
+<status status="NOT RUN" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${KeywordOutput}</arg>
+<arg>System Error</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</kw>
+<status status="NOT RUN" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</branch>
+<status status="NOT RUN" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</if>
+<status status="NOT RUN" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</branch>
+<status status="NOT RUN" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</if>
+<status status="NOT RUN" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Enter Integer Values</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</kw>
+<status status="PASS" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</branch>
+<status status="PASS" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</if>
+<msg timestamp="20220504 20:45:01.344" level="INFO">${Output} = </msg>
+<status status="PASS" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${String}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</kw>
+<doc>This Test case will check the Criteria to be passed to the Output Function and will Output
+the message accordingly if it is not eligible to get into the funtion</doc>
+<status status="PASS" starttime="20220504 20:45:01.344" endtime="20220504 20:45:01.344"/>
+</test>
+<doc>This File contains all the Test Cases and Keywords required for the Code Validation</doc>
+<status status="PASS" starttime="20220504 20:45:01.265" endtime="20220504 20:45:01.344"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="TestCases">TestCases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
